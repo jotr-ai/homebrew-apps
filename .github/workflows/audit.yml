@@ -1,0 +1,20 @@
+name: Audit
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  homebrew:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit cask
+        run: |
+          tap_root="$(brew --repository)/Library/Taps/jotr-ai"
+          mkdir -p "${tap_root}"
+          ln -s "${GITHUB_WORKSPACE}" "${tap_root}/homebrew-apps"
+          brew audit --cask --strict --online jotr
+          brew install --cask --dry-run jotr

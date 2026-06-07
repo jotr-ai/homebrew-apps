@@ -1,6 +1,6 @@
 cask "jotr" do
-  version "1.0.9,11"
-  sha256 "cb8acf745157949227b607ac1a6f783a2e06f8e48d03216d279295a28f3e4605"
+  version "1.0.9,12"
+  sha256 "a5487b0af8103dab53c411128bdbeb76a118947a0c452e10c13b29eb80c0be67"
 
   url "https://downloads.jotr.ai/releases/Jotr-#{version.csv.first}-build#{version.csv.second}.dmg"
   name "Jotr"
